@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">ARMY RUSH</string>
+    <string name="title_activity_main">ARMY RUSH</string>
+    <string name="package_name">com.armyrush.game</string>
+    <string name="custom_url_scheme">com.armyrush.game</string>
+</resources>

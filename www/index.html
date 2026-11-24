@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#07152a" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <title>ARMY RUSH</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main id="app">
+      <canvas id="game" aria-label="ARMY RUSH 3D game"></canvas>
+      <div class="vignette" aria-hidden="true"></div>
+      <header class="hud" id="hud" hidden>
+        <div class="hud-brand"><span class="brand-mark">A</span><span>ARMY<br /><b>RUSH</b></span></div>
+        <div class="stat-pill coin-pill"><span class="coin-icon">◆</span><span id="runCoins">0</span></div>
+        <div class="army-card">
+          <div class="army-label"><span>YOUR ARMY</span><span id="distance">0 m</span></div>
+          <div class="army-number" id="armyCount">12</div>
+          <div class="army-meter"><span id="armyMeter"></span></div>
+        </div>
+        <div class="boss-hud" id="bossHud" hidden>
+          <div class="boss-label"><span id="bossName">TITAN</span><span id="bossPercent">100%</span></div>
+          <div class="boss-meter"><span id="bossMeter"></span></div>
+        </div>
+        <div class="drag-hint" id="dragHint"><span>↔</span> DRAG TO STEER</div>
+      </header>
+
+      <section class="screen lobby-screen" id="lobby">
+        <div class="lobby-top"><div class="eyebrow"><span class="eyebrow-line"></span> BUILD YOUR LEGEND</div><div class="bank-pill"><span>◆</span><strong id="bankCoins">0</strong><small>COINS</small></div></div>
+        <div class="hero-copy"><h1>ARMY<br /><span>RUSH</span></h1><p>ONE ARMY. ONE BRIDGE.<br />NO WAY BACK.</p></div>
+        <div class="lobby-soldier" aria-hidden="true"><div class="soldier-glow"></div><div class="hero-helmet"></div><div class="hero-head"></div><div class="hero-body"></div><div class="hero-gun"></div></div>
+        <div class="lobby-panel">
+          <div class="panel-heading"><span>COMMAND CENTER</span><span class="ready-dot">● READY</span></div>
+          <div class="upgrade-grid">
+            <button class="upgrade-card" data-upgrade="army"><span class="upgrade-icon">✚</span><span class="upgrade-title">STARTING ARMY</span><strong id="armyUpgrade">12 SOLDIERS</strong><small id="armyCost">◆ 50</small></button>
+            <button class="upgrade-card" data-upgrade="strength"><span class="upgrade-icon">⚔</span><span class="upgrade-title">SOLDIER STRENGTH</span><strong id="strengthUpgrade">1.0× POWER</strong><small id="strengthCost">◆ 75</small></button>
+            <button class="upgrade-card" data-upgrade="bonus"><span class="upgrade-icon">◆</span><span class="upgrade-title">COIN BONUS</span><strong id="bonusUpgrade">0% BONUS</strong><small id="bonusCost">◆ 100</small></button>
+            <button class="upgrade-card weapon-card" data-upgrade="weapon"><span class="upgrade-icon">➤</span><span class="upgrade-title">ARSENAL</span><strong id="weaponUpgrade">ASSAULT RIFLE</strong><small id="weaponCost">NEXT: PLASMA RIFLE · ◆ 250</small></button>
+          </div>
+          <button class="play-button" id="playButton"><span>DEPLOY YOUR ARMY</span><b>➜</b></button>
+          <div class="lobby-foot"><span>SWIPE TO MOVE</span><i></i><span>GROW. FIGHT. SURVIVE.</span></div>
+        </div>
+      </section>
+
+      <section class="screen result-screen" id="result" hidden>
+        <div class="result-card">
+          <div class="result-badge">MISSION REPORT</div>
+          <div class="result-icon">✕</div>
+          <h2>ARMY<br /><span>WIPED OUT</span></h2>
+          <p>THE BRIDGE CLAIMED YOUR SQUAD.<br />UPGRADE. REGROUP. STRIKE BACK.</p>
+          <div class="result-stats"><div><strong id="resultDistance">0 m</strong><small>DISTANCE</small></div><div><strong id="resultCoins">+0</strong><small>COINS EARNED</small></div><div><strong id="resultKills">0</strong><small>ENEMIES DOWN</small></div></div>
+          <button class="play-button" id="returnButton"><span>RETURN TO COMMAND</span><b>➜</b></button>
+        </div>
+      </section>
+      <div class="landscape-prompt"><span>↻</span><strong>ROTATE YOUR DEVICE</strong><small>ARMY RUSH IS BEST IN PORTRAIT</small></div>
+      <div class="toast" id="toast" aria-live="polite"></div>
+    </main>
+    <script type="module" src="./build/game.bundle.js"></script>
+  </body>
+</html>
